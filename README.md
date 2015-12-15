@@ -2,6 +2,8 @@
 ELF header abuse
 
 ## Archive of blog entry
+Originally posted at https://www.sentinelone.com/blog/breaking-and-evading/
+
 The focus of any malware research is on anticipating where an attack may go, or where it’s
 already been in order to develop and implement new prevention techniques.  While reverse 
 engineering some recent Linux malware samples, I found an interesting and novel technique 
