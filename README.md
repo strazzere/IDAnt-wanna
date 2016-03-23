@@ -81,16 +81,16 @@ Prior to publishing this article, I’ve notified Hex-Rays and the 10 engines wh
 import "elf"
 
 rule IDAnt_wanna : antidisassemble antianalysis {
-meta:
-author = "Tim 'diff' Strazzere <diff@sentinelone.com> <strazz@gmail.com>"
-        	filetype = "elf"
-        	description = "Detect a misaligned program header which causes some analysis engines to fail"
-        	version = "1.0"
-        	date = "2015-12"
+	meta:
+		author = "Tim 'diff' Strazzere <diff@sentinelone.com> <strazz@gmail.com>"
+		filetype = "elf"
+		description = "Detect a misaligned program header which causes some analysis engines to fail"
+		version = "1.0"
+		date = "2015-12"
 	condition:
-for any i in (0..elf.number_of_segments - 1) : (elf.segments[i].offset >= filesize) and
-elf.number_of_sections == 0 and
-elf.sh_entry_size == 0
+		for any i in (0..elf.number_of_segments - 1) : (elf.segments[i].offset >= filesize) and
+		elf.number_of_sections == 0 and
+		elf.sh_entry_size == 0
 }
 ```
 
